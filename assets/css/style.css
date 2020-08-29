@@ -29,7 +29,7 @@ nav p {
     float: right;
 }
 
-#start {
+#startbtn, #highscorebtn {
     background-color: darkgreen;
     color: white;
     border: none;
@@ -38,7 +38,7 @@ nav p {
     border-radius: 10px;
 }
 
-#start:hover {
+#startbtn:hover {
     color: #ffffff;
     background: #4CBB17;
 }

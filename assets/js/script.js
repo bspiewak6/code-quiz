@@ -38,6 +38,9 @@ var questions = [
     },
 ];
 
+//  Clicking the button starts the quiz, hides the welcome container, and displays the quiz wrapper
+function startQuiz () {}
+
 function getQuestion() {
     var question = questions[currentQuestion];
     document.getElementById("question").textContent = question.question;
@@ -75,18 +78,15 @@ function processClick() {
     }    
 
     // deduct 10 seconds from timer and deduct 1 from score
-};
-    
+
     currentQuestion++
     if (currentQuestion === questions.length) {
         // show highscore.html
-
         // set quiz-wrapper to empty string, 
         // create new variable 
     } 
     getQuestion();  
-
-
+};
 
 getQuestion();
 

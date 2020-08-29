@@ -11,12 +11,11 @@
     <header>
         <div class="viewscore"><a href="./highscores.html">View High Scores</a></div>
         <div>
-            <!-- <span>Timer: </span> -->
             <span id="timer" class="timer">Time Left: 0</span>
         </div>
     </header>
     
-    <div class="quiz" id="quiz">
+    <div id="welcome-container" class="container">
         <h1 class="welcome">Coding Quiz Challenge</h1>
         <p>
             Try to answer the following code-related questions within the time limit.
@@ -24,11 +23,13 @@
             Keep in mind that incorrect answers will penalize your score/time by ten seconds!
         </p>
         <button id="start">Start Quiz</button>
-        <div class="quiz-wrapper" id="quiz-area">
-            <p id= "question" class="question"></p>
-            <ol id="answer" class="answer"></ol>
-        </div>
-    </div>  
+    </div>
+    
+    <div id="quiz-container" class="container">
+        <p id="question" class="question"></p>
+        <ol id="answer" class="answer"></ol>
+    </div>
+      
     <script src="assets/js/script.js"></script>
 </body>
 </html>

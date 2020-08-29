@@ -23,7 +23,7 @@ As a coding boot camp student, the user of this site will want to take a timed q
 2. When the user answers the question, they are presented with another question
 3. If the user answers the question incorrectly, time is subracted from the clock
 4. When all questions are answered or the timer reaches 0, the game is over
-4. Lastly, the user is able to save their initials and score to be added to the high scores page
+4. Lastly, the user is able to save their initials and their score will be added to the high scores page
 
 ## Links
 * [Password Generator Deployed Site Link]() 

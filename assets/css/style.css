@@ -18,8 +18,8 @@ header a {
     font-weight: bold;
 }
 
-.container {
-    text-align: center
+div.quiz-container {
+    align-items: center;
 }
 
 a:link, a:visited {
@@ -42,7 +42,6 @@ a:link, a:visited {
     background: #4CBB17;
 }
 
-.quiz-wrapper {
-    text-align: center;
+.answer li:hover {
+    background-color: #4CBB17;  
 }
-

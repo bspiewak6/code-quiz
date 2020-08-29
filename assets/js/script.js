@@ -1,9 +1,10 @@
 var timerClock = document.getElementById("timer");
 var startBtn = document.getElementById("start");
-var answerEl = document.getElementById("answer");
-var questionEl = document.getElementById("question");
+var quizContainer = document.getElementById("quiz-container")
+var answerList = document.getElementById("answer");
+
 var currentQuestion = 0;
-var scoreCounter = 0;
+var scoreCounter = 75;
 
 // create array for questions, choices and answers
 var questions = [
@@ -38,8 +39,8 @@ var questions = [
     },
 ];
 
-//  Clicking the button starts the quiz, hides the welcome container, and displays the quiz wrapper
-function startQuiz () {}
+//  Clicking the "start quiz" button starts the quiz, hides the welcome container, and displays the quiz wrapper
+
 
 function getQuestion() {
     var question = questions[currentQuestion];
@@ -54,7 +55,7 @@ function getQuestion() {
 };
 
 function timer() {
-    var timeLeft = 75;
+    var timeLeft = scoreCounter;
 
     var interval = setInterval(function() {
         if (timeLeft > 0) {
@@ -70,27 +71,34 @@ function timer() {
 function processClick() {
     // say if question is right or wrong
     var question = questions[currentQuestion]
-    console.log(this);
     if (question.answer === this.textContent) {
-        scoreCounter++;
-    } else {
-        timerClock - 10;
+        correctAlert = document.createElement("p");
+        correctAlert.textContent = "CORRECT";
+        quizContainer.appendChild(correctAlert);
+    } else if (scoreCounter) {
+
+
+        
+        //deduct score
     }    
 
     // deduct 10 seconds from timer and deduct 1 from score
 
     currentQuestion++
     if (currentQuestion === questions.length) {
+        
+        
         // show highscore.html
         // set quiz-wrapper to empty string, 
         // create new variable 
-    } 
+    } else {
+        // remove(CorrectAlert)
+    }
+
     getQuestion();  
 };
 
-getQuestion();
-
 // event listener to start quiz when user clicks on start button
-
+startBtn.addEventListener("click", getQuestion);
 // when user clicks on start button, the timer starts
 startBtn.addEventListener("click", timer);

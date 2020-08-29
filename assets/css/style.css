@@ -3,27 +3,23 @@ body {
     font-size: 18px;
 }
 
-.top {
+header {
     font-size: 24px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 0;
+    padding: 15px 15px 15px 0;
+    color:black;
 }
 
-.top a {
+header a {
     color: darkgreen;
     text-decoration: none;
     font-weight: bold;
 }
 
-main {
+div.quiz {
     text-align: center
-}
-
-header {
-    padding: 15px 15px 15px 0;
-    color:black;
 }
 
 a:link, a:visited {
@@ -32,7 +28,7 @@ a:link, a:visited {
     font-weight: bold;
 }
 
-#start{
+#start, #goback, #clearscore{
     background-color: darkgreen;
     color: white;
     border: none;
@@ -41,12 +37,12 @@ a:link, a:visited {
     border-radius: 10px;
 }
 
-#start:hover {
+#start:hover, #goback:hover, #clearscore:hover {
     color: #ffffff;
     background: #4CBB17;
 }
 
-/* .game-wrapper {
-    display: none;
-} */
+.quiz-wrapper {
+    text-align: center;
+}
 

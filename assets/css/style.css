@@ -29,7 +29,7 @@ nav p {
     float: right;
 }
 
-#startbtn, #highscorebtn {
+#startbtn {
     background-color: darkgreen;
     color: white;
     border: none;

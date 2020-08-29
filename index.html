@@ -9,13 +9,13 @@
 <body>
 
     <header>
-        <nav>
-            <a href="highscores.html">View High Scores</a>
-            <p id="timer">Time: 0</p>
-        </nav>
+        <ul class="top" id="info">
+            <a href="./highscores.html">View High Scores</a>
+            <!-- <p id="timer">Time: 0</p> -->
+        </ul>
     </header>
     
-    <div class="container">
+    <main class="game" id="welcome">
         <h1>Coding Quiz Challenge</h1>
         <p>
             Try to answer the following code-related questions within the time limit.
@@ -23,10 +23,9 @@
             Keep in mind that incorrect answers will penalize your score/time by ten seconds!
         </p>
         <button id="startbtn">Start Quiz</button>
-
-    </div>
+        <div class="game-wrapper" id="view-area"></div>
+    </main>
 
     <script src="assets/js/script.js"></script>
 </body>
 </html>
-

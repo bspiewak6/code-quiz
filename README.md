@@ -5,7 +5,7 @@ As a coding boot camp student, the user of this site will want to take a timed q
 ## Table of Contents
 * [Technologies](#technologies)
 * [Screenshot](#screenshot)
-* [Requirements and Game Rules](#requirements)
+* [Requirements](#requirements)
 * [Links](#links)
 
 
@@ -18,7 +18,7 @@ As a coding boot camp student, the user of this site will want to take a timed q
 ## Screenshot
 ![Screenshot](./assets/images/04-web-apis-homework-demo.gif)
 
-## Requirements and Game Rules
+## Requirements
 1. When the user clicks the start button, a timer starts and the user is presented with a question
 2. When the user answers the question, they are presented with another question
 3. If the user answers the question incorrectly, time is subracted from the clock

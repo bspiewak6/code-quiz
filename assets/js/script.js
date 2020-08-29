@@ -1,70 +1,46 @@
-var timerClock = document.getElementById();
-var quizSelection = document.getElementById();
+var timerClock = document.getElementById('timer');
+var quizSelection = document.getElementById('quiz');
 var startBtn = document.getElementById('start');
+var questionElement = document.getElementById('question');
+var answerElement = document.getElementById('answer');
+var currentQuestion = 0;
+
+
+questions[currentQuestion]; // this will show the user questions
 
 // create variable with questions and answrs
 
 var questions = [
     {
-    q: "Inside which HTML element do we put the JavaScript?",
-    answers: {
-    a1: "<js>",
-    a2: "<javascript>",
-    a3: "<script>",
-    a4: "<scripting>"
+    question: "Inside which HTML element do we put the JavaScript?",
+    answer: ["<js>", "<javascript>", "<script>", "<scripting>"],
+    correct: "answer"
     },
 
-    correctAnswer: "a3"
+    
+    {
+    question: "Where is the correct place to insert a JavaScript?",
+    answer: ["the <header> section", "both <header> and <body> section", "<body> section", "<footer> section"],
+    correct: "answer"
     },
     
     {
-    q: "Where is the correct place to insert a JavaScript?",
-    answers: {
-    a1: "the <header> section",
-    a2: "both <header> and <body> section",
-    a3: "<body> section",
-    a4: "<footer> section"
-    },
-
-    correctAnswer: "a3"
-    },
+    question: "Commonly used data types DO NOT Include:",
+    answer: ["strings", "booleans", "alerts", "numbers"],
+    correct: "answer"
+    },   
     
     {
-    q: "Commonly used data types DO NOT Include:",
-    answers: {
-    a1: "strings",
-    a2: "booleans",
-    a3: "alerts",
-    a4: "numbers"
+    question: "The condition in an if/else statement is enclosed with ______",
+    answer: ["quotes", "parenthesis", "curly brackets", "square brackets"],
+    correct: "answer" 
     },
 
-    correctAnswer: "a2"
-    },    
-    
     {
-    q: "The condition in an if/else statement is enclosed with ______",
-    answers: {
-    a1: "quotes",
-    a2: "parenthesis",
-    a3: "curly brackets",
-    a4: "square brackets"
+    question: "Arrays in JavaScript can be used to store ______" ,
+    answers: ["number and strings", "other arrays", "booleans", "all of the above"],
+    correct: "answer"
     },
-
-    correctAnswer: "a2"
-    },    
-    
-    {
-    q: "Arrays in JavaScript can be used to store ______" ,
-    answers: {
-    a1: "number and strings",
-    a2: "other arrays",
-    a3: "booleans",
-    a4: "all of the above"
-    },
-
-    correctAnswer: "a"
-    },
-
 ];
 
 
@@ -72,13 +48,23 @@ function timer() {
     var timeLeft = 75;
 
     var interval = setInterval(function() {
-        if (remainingTime >= 0) {
-            timerClock.textContent = remainingTime;
-            remainingTime--; 
-        } else{
+        if (timeLeft > 0) {
+            timerClock.textContent = timeLeft;
+            timeLeft--; 
+        } else {
+            clearInterval(interval);
+            // displayMessage();
             
+            // wrong answer needs to decrease the timer by 10 seconds
+            // when time hits 0, bring up screen to save initials and score
+
         }
     }, 1000);     
 };
 
-startBtn.onclick = start();
+function getQuestion() {
+    var question = questions[currentQuestion];
+    questionElement.textContent = question.question
+};
+
+startBtn.addEventListener("click", timer);

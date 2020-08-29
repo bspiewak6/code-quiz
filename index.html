@@ -9,21 +9,20 @@
 <body>
 
     <header>
-        <ul class="top" id="info">
-            <a href="./highscores.html">View High Scores</a>
-            <!-- <p id="timer">Time: 0</p> -->
-        </ul>
+        <div class="viewscore"><a href="./highscores.html">View High Scores</a></div>
+        <div>
+            <span id="timer" class="timer">Timer:</span>
+        </div>
     </header>
     
-    <div class="game">
-        <h1 class="welcome">Coding Quiz Challenge</h1>
-        <p>
-            Try to answer the following code-related questions within the time limit.
-            <br />
-            Keep in mind that incorrect answers will penalize your score/time by ten seconds!
-        </p>
+    <main id="quiz">
         <button id="start">Start Quiz</button>
-    </div>
+        <h1 class="welcome">Coding Quiz Challenge</h1>
+        
+        <div class="quiz-wrapper">
+            <p id= "question" class="question">Question Goes Here</p>
+            <ol id="answer" class="answer"></ol>
+        </div>
 
     <script src="assets/js/script.js"></script>
 </body>

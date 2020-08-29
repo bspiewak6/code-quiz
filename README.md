@@ -5,7 +5,7 @@ As a coding boot camp student, the user of this site will want to take a timed q
 ## Table of Contents
 * [Technologies](#technologies)
 * [Screenshot](#screenshot)
-* [Requirements](#requirements)
+* [Requirements and Game Rules](#requirements)
 * [Links](#links)
 
 

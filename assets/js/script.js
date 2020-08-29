@@ -1,48 +1,43 @@
 var timerClock = document.getElementById('timer');
 var quizSelection = document.getElementById('quiz');
 var startBtn = document.getElementById('start');
-var questionElement = document.getElementById('question');
 var answerElement = document.getElementById('answer');
 var currentQuestion = 0;
-
-
-questions[currentQuestion]; // this will show the user questions
 
 // create variable with questions and answrs
 
 var questions = [
     {
     question: "Inside which HTML element do we put the JavaScript?",
-    answer: ["<js>", "<javascript>", "<script>", "<scripting>"],
-    correct: "answer"
+    choices: ["<js>", "<javascript>", "<script>", "<scripting>"],
+    correct: "<script>"
     },
 
     
     {
     question: "Where is the correct place to insert a JavaScript?",
-    answer: ["the <header> section", "both <header> and <body> section", "<body> section", "<footer> section"],
-    correct: "answer"
+    choices: ["the <header> section", "both <header> and <body> section", "<body> section", "<footer> section"],
+    correct: "<body> section"
     },
     
     {
     question: "Commonly used data types DO NOT Include:",
-    answer: ["strings", "booleans", "alerts", "numbers"],
-    correct: "answer"
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    correct: "booleans"
     },   
     
     {
     question: "The condition in an if/else statement is enclosed with ______",
-    answer: ["quotes", "parenthesis", "curly brackets", "square brackets"],
-    correct: "answer" 
+    choices: ["quotes", "parenthesis", "curly brackets", "square brackets"],
+    correct: "parenthesis" 
     },
 
     {
     question: "Arrays in JavaScript can be used to store ______" ,
-    answers: ["number and strings", "other arrays", "booleans", "all of the above"],
-    correct: "answer"
+    choices: ["number and strings", "other arrays", "booleans", "all of the above"],
+    correct: "all of the above"
     },
 ];
-
 
 function timer() {
     var timeLeft = 75;
@@ -64,7 +59,33 @@ function timer() {
 
 function getQuestion() {
     var question = questions[currentQuestion];
-    questionElement.textContent = question.question
+    document.getElementById('question').textContent = question.question;
+    answer.innerHTML = "";
+    for (var i = 0; i < question.choices.length; i++) {
+        var newItem = document.createElement("li"); // create li element and save to a variable
+        newItem.textContent = question.choices[i];
+        answer.appendChild(newItem);
+    }
+    
+    // make event listener, when this is clicked we're going to get a new question
+    newItem.addEventListener("click", processClick)
+
 };
 
+function processClick() {
+    // say if it's right or wrong
+    // if wrong, subtract 10 seconds from the timer
+    // load next question
+
+    currentQuestion++
+    getQuestion();
+    
+}
+
+
+
+
+getQuestion();
+
+// when user clicks on start button, the timer starts
 startBtn.addEventListener("click", timer);

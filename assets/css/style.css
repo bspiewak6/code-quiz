@@ -17,10 +17,6 @@ body {
     font-weight: bold;
 }
 
-ul {
-    list-style-type: none;
-}
-
 main {
     text-align: center
 }
@@ -34,10 +30,6 @@ a:link, a:visited {
     color: darkgreen;
     text-decoration: none;
     font-weight: bold;
-}
-
-div.game {
-    text-align: center
 }
 
 #start{

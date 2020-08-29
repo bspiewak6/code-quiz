@@ -1,8 +1,9 @@
 var timerClock = document.getElementById('timer');
-var quizSelection = document.getElementById('quiz');
+//var quizSelection = document.getElementById('quiz');
 var startBtn = document.getElementById('start');
 var answerElement = document.getElementById('answer');
 var currentQuestion = 0;
+var scoreCounter = 0;
 
 // create variable with questions and answrs
 
@@ -10,32 +11,32 @@ var questions = [
     {
     question: "Inside which HTML element do we put the JavaScript?",
     choices: ["<js>", "<javascript>", "<script>", "<scripting>"],
-    correct: "<script>"
+    answer: "<script>"
     },
 
     
     {
     question: "Where is the correct place to insert a JavaScript?",
     choices: ["the <header> section", "both <header> and <body> section", "<body> section", "<footer> section"],
-    correct: "<body> section"
+    answer: "<body> section"
     },
     
     {
     question: "Commonly used data types DO NOT Include:",
     choices: ["strings", "booleans", "alerts", "numbers"],
-    correct: "booleans"
+    answer: "booleans"
     },   
     
     {
     question: "The condition in an if/else statement is enclosed with ______",
     choices: ["quotes", "parenthesis", "curly brackets", "square brackets"],
-    correct: "parenthesis" 
+    answer: "parenthesis" 
     },
 
     {
     question: "Arrays in JavaScript can be used to store ______" ,
     choices: ["number and strings", "other arrays", "booleans", "all of the above"],
-    correct: "all of the above"
+    answer: "all of the above"
     },
 ];
 
@@ -48,11 +49,7 @@ function timer() {
             timeLeft--; 
         } else {
             clearInterval(interval);
-            // displayMessage();
-            
-            // wrong answer needs to decrease the timer by 10 seconds
-            // when time hits 0, bring up screen to save initials and score
-
+            // show highscores.html
         }
     }, 1000);     
 };
@@ -62,21 +59,28 @@ function getQuestion() {
     document.getElementById('question').textContent = question.question;
     answer.innerHTML = "";
     for (var i = 0; i < question.choices.length; i++) {
-        var newItem = document.createElement("li"); // create li element and save to a variable
+        var newItem = document.createElement("li");
         newItem.textContent = question.choices[i];
         answer.appendChild(newItem);
+        newItem.addEventListener("click", processClick)
     }
-    
-    // make event listener, when this is clicked we're going to get a new question
-    newItem.addEventListener("click", processClick)
-
 };
 
 function processClick() {
-    // say if it's right or wrong
-    // if wrong, subtract 10 seconds from the timer
-    // load next question
+    // say if question is right or wrong
+    var question = questions[currentQuestion]
+    console.log(this);
+    if (question.answer === this.textContent) {
+        // increase score
+    } else {
+        // deduct 10 seconds from timer and deduct 1 from score
+    }
 
+
+    if (currentQuestion) {
+
+    }
+    // load next question
     currentQuestion++
     getQuestion();
     

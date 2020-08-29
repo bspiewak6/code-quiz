@@ -67,7 +67,7 @@ function timer() {
 function processClick() {
     // say if question is right or wrong
     var question = questions[currentQuestion]
-    //console.log(this);
+    console.log(this);
     if (question.answer === this.textContent) {
         scoreCounter++;
     } else {
@@ -80,6 +80,7 @@ function processClick() {
     currentQuestion++
     if (currentQuestion === questions.length) {
         // show highscore.html
+
         // set quiz-wrapper to empty string, 
         // create new variable 
     } 

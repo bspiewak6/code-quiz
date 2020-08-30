@@ -110,10 +110,6 @@ function processClick() {
 };
 
 
-// added a form in HTML 
-// add the attribute hide in the css (display: none);
-
-// add an onclick event to the save button from the form (add event listener "click")
 
 // create a function that ends the game
 function endGame() {
@@ -128,12 +124,12 @@ document.getElementById("result").setAttribute("class", "hide")
 finalScore.textContent = "Your final score is: " + timeLeft;
 document.getElementById("form").setAttribute("class", "block")
 
-
+// add an onclick event to the save button from the form (add event listener "click")
 // when user clicks on save button, the initials and score are saved in localStorage 
 
-// saveBtn.addEventListener("click", );
+saveBtn.addEventListener("click", );
 
-// takes the user to the high scores page
+// takes the user to the high scores page to show all localStorage names and scores
 
 
 };

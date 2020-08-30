@@ -75,12 +75,12 @@ function processClick() {
         correctAlert = document.createElement("p");
         correctAlert.textContent = "CORRECT";
         quizContainer.appendChild(correctAlert);
-    } else if (scoreCounter) {
-
-
-        
-        //deduct score
-    }    
+    } else {
+        question.answer = !this.textContent;
+        scoreCounter - 10;
+    }
+    
+    //deduct score
 
     // deduct 10 seconds from timer and deduct 1 from score
 

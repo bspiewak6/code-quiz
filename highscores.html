@@ -9,12 +9,16 @@
 
 <body>
     <header>
-        <h1> High scores </h1>
+        <div class="viewscore"><a href="./index.html">Back to Quiz</a></div>
+        <div>
+            <span id="timer" class="timer">Time Left: 0</span>
+        </div>
     </header>
     
-    <table id="highscores"></table>
-        <button id="goback" onclick="document.location='./index.html'">Go back</button>
+    <div id="highscores">
+        <p id="highscore-text">high scores go here</p>
         <button id="clearscore">Clear high scores</button>
+    </div>
     
     <script src="assets/js/script.js"></script>
 </body>

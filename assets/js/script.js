@@ -9,6 +9,7 @@ var scoreCounter = 75;
 var timeLeft = 75;
 
 
+
 // create array for questions, choices and answers
 var questions = [
     {
@@ -44,8 +45,8 @@ var questions = [
 
 //  Clicking the "start quiz" button starts the quiz, hides the welcome container, and displays the quiz wrapper
 
-
 function getQuestion() {
+    if(questions[currentQuestion]){
     var question = questions[currentQuestion];
     document.getElementById("question").textContent = question.question;
     answer.innerHTML = "";
@@ -55,10 +56,11 @@ function getQuestion() {
         answer.appendChild(newItem);
         newItem.addEventListener("click", processClick)
     }
+}
 };
-
+var interval
 function timer() {
-    var interval = setInterval(function() {
+     interval = setInterval(function() {
         if (timeLeft > 0) {
             timerClock.textContent = "Time Left: " + timeLeft;
             timeLeft--; 
@@ -73,7 +75,9 @@ function processClick() {
     // say if question is right or wrong
     result.innerHTML = "";
     var question = questions[currentQuestion];
-    correctAlert = document.createElement("p");
+    if (questions[currentQuestion]){
+        correctAlert = document.createElement("p");
+
     if (question.answer === this.textContent) {
         correctAlert.textContent = "CORRECT";
         
@@ -84,12 +88,12 @@ function processClick() {
     result.appendChild(correctAlert);
     currentQuestion++;
     
-    // add a timeout before asking the next question
-    // 2-3 seconds later, the next question pops up
-    // clear the result div (result.innerHTML = "") when asking the new question
-    
     getQuestion();  
+}   else clearInterval(interval)
 };
+
+
+
 
 // event listener to start quiz when user clicks on start button
 startBtn.addEventListener("click", getQuestion);
@@ -97,28 +101,3 @@ startBtn.addEventListener("click", getQuestion);
 startBtn.addEventListener("click", timer);
 
 
-// // function for saving highscore
-// function saveHighscore() {
-//     // get value of input box
-//     var initials = initialsEl.value.trim();
-  
-//     // make sure value wasn't empty
-//     if (initials !== "") {
-//       // get saved scores from localstorage, or if not any, set to empty array
-//       var highscores =
-//         JSON.parse(window.localStorage.getItem("highscores")) || [];
-  
-//       // format new score object for current user
-//       var newScore = {
-//         score: time,
-//         initials: initials
-//       };
-  
-//       // save to localstorage
-//       highscores.push(newScore);
-//       window.localStorage.setItem("highscores", JSON.stringify(highscores));
-  
-//       // redirect to next page
-//       window.location.href = "highScore.html";
-//     }
-//   }

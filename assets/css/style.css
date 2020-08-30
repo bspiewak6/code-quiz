@@ -8,28 +8,28 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 15px 15px 15px 0;
-    color:black;
+    padding: 15px 15px 15px 10px;
+    color:white;
+    background-color: darkgreen;
 }
 
 header a {
-    color: darkgreen;
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
 a:link, a:visited {
-    color: darkgreen;
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-.container {
-    display: inline;
-    align-items: center;
+.content {
+    justify-items: center;
 }
 
-#start, #goback, #clearscore{
+#start {
     background-color: darkgreen;
     color: white;
     border: none;
@@ -38,11 +38,27 @@ a:link, a:visited {
     border-radius: 10px;
 }
 
-#start:hover, #goback:hover, #clearscore:hover {
+#clearscore {
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+}
+
+#start:hover, #clearscore:hover {
     color: #ffffff;
     background: #4CBB17;
 }
 
 .answer li:hover {
-    background-color: #4CBB17;  
+    background-color: #4CBB17;
+    width: 40%;  
+}
+
+#highscore-text {
+    padding: 10px;
+    background: lightgray;
 }

@@ -68,7 +68,6 @@ function timer() {
             timeLeft--; 
         } else {
             clearInterval(interval);
-            // show highscores.html - run function 
         }
     }, 1000);     
 };
@@ -77,9 +76,13 @@ function processClick() {
     // say if question is right or wrong
     result.innerHTML = "";
     var question = questions[currentQuestion];
-    if (questions[currentQuestion]){
+    if (questions[currentQuestion] && currentQuestion < 4) {
         correctAlert = document.createElement("p");
-
+    } else if (currentQuestion === 4) {
+        correctAlert = document.createElement("p");
+        clearInterval(interval);
+    }
+    
     if (question.answer === this.textContent) {
         correctAlert.textContent = "CORRECT";
         
@@ -87,17 +90,13 @@ function processClick() {
         correctAlert.textContent = "INCORRECT";
         timeLeft = timeLeft - 10;
     }
+
     result.appendChild(correctAlert);
     currentQuestion++;
     
     getQuestion();  
-
-}   else clearInterval(interval);
 };
 
-// need to replace the original text on the page with the quiz q&a when start button is clicked
-
-// need to stop the timer after clicking last answer
 
 // need to use localStorage to save score which is the time left
 

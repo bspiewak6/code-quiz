@@ -5,7 +5,8 @@ var answerList = document.getElementById("answer");
 var result = document.getElementById("result");
 var welcome = document.getElementById("welcome-container");
 var quiz = document.getElementById("quiz-container");
-var saveBtn = document.getElementById("save")
+var saveBtn = document.getElementById("save");
+var finalScore = document.getElementById("score");
 
 var currentQuestion = 0;
 var scoreCounter = 75;
@@ -123,12 +124,19 @@ clearInterval(interval);
 document.getElementById("quiz-container").setAttribute("class", "hide")
 document.getElementById("result").setAttribute("class", "hide")
 
-// unhide the form div
+// show user their score and unhide the form to enter initials 
+finalScore.textContent = "Your final score is: " + timeLeft;
 document.getElementById("form").setAttribute("class", "block")
 
-// when user clicks on save button, the initials and score are saved in localStorage
-startBtn.addEventListener("click", timer);
-}
+
+// when user clicks on save button, the initials and score are saved in localStorage 
+
+// saveBtn.addEventListener("click", );
+
+// takes the user to the high scores page
+
+
+};
 
 
 // event listener to start quiz when user clicks on start button

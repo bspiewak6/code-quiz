@@ -5,6 +5,7 @@ var answerList = document.getElementById("answer");
 var result = document.getElementById("result");
 var welcome = document.getElementById("welcome-container");
 var quiz = document.getElementById("quiz-container");
+var saveBtn = document.getElementById("save")
 
 var currentQuestion = 0;
 var scoreCounter = 75;
@@ -46,6 +47,9 @@ var questions = [
     answer: "all of the above"
     },
 ];
+//  Hide form until after quiz is completed
+document.getElementById("form").setAttribute("class", "hide")
+
 
 //  Function to start the quiz and get the array of questions to run
 function getQuestion() {
@@ -105,8 +109,8 @@ function processClick() {
 };
 
 
-
-// add a form inside the result area and add the attribute hide (display: none);
+// added a form in HTML 
+// add the attribute hide in the css (display: none);
 
 // add an onclick event to the save button from the form (add event listener "click")
 
@@ -119,10 +123,11 @@ clearInterval(interval);
 document.getElementById("quiz-container").setAttribute("class", "hide")
 document.getElementById("result").setAttribute("class", "hide")
 
-// unhide the result div
+// unhide the form div
+document.getElementById("form").setAttribute("class", "block")
 
-// in the onclick for save add all the logic to save the object in the localstorage
-
+// when user clicks on save button, the initials and score are saved in localStorage
+startBtn.addEventListener("click", timer);
 }
 
 
@@ -130,5 +135,6 @@ document.getElementById("result").setAttribute("class", "hide")
 startBtn.addEventListener("click", getQuestion);
 // when user clicks on start button, the timer starts
 startBtn.addEventListener("click", timer);
+
 
 

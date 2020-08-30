@@ -29,7 +29,7 @@ a:link, a:visited {
     justify-items: center;
 }
 
-#start, #clearscore, #savebtn {
+#start, #clearscore, #save {
     background-color: darkgreen;
     color: white;
     border: none;
@@ -63,4 +63,17 @@ a:link, a:visited {
 
 .hide {
     display: none;
+}
+
+.block {
+    display: block;
+}
+
+#form input {
+    border: 1px solid #000000;
+    display: inline;
+    padding: 10px;
+    font-size: 16px;
+    color: #000000;
+    border-radius: 10px;
 }

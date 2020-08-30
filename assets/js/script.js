@@ -1,8 +1,10 @@
+// all global variables
 var timerClock = document.getElementById("timer");
 var startBtn = document.getElementById("start");
-var quizContainer = document.getElementById("quiz-container")
 var answerList = document.getElementById("answer");
 var result = document.getElementById("result");
+var welcome = document.getElementById("welcome-container");
+var quiz = document.getElementById("quiz-container");
 
 var currentQuestion = 0;
 var scoreCounter = 75;
@@ -12,7 +14,7 @@ var interval
 
 
 
-// create array for questions, choices and answers
+// array for questions, choices and answers
 var questions = [
     {
     question: "Inside which HTML element do we put the JavaScript?",
@@ -45,8 +47,7 @@ var questions = [
     },
 ];
 
-//  Clicking the "start quiz" button starts the quiz, hides the welcome container, and displays the quiz wrapper
-
+//  Function to start the quiz and get the array of questions to run
 function getQuestion() {
     if(questions[currentQuestion]){
     var question = questions[currentQuestion];
@@ -82,7 +83,7 @@ function processClick() {
         correctAlert = document.createElement("p");
         clearInterval(interval);
     }
-    
+
     if (question.answer === this.textContent) {
         correctAlert.textContent = "CORRECT";
         
@@ -93,17 +94,36 @@ function processClick() {
 
     result.appendChild(correctAlert);
     currentQuestion++;
+
+    if (currentQuestion === questions.length) {
+        endGame();
+    } else {
+        getQuestion();
+    }
     
     getQuestion();  
 };
 
 
-// need to use localStorage to save score which is the time left
 
-// take user to highscore.html for them to write in initials
+// add a form inside the result area and add the attribute hide (display: none);
 
-// save all high scores in localStorage to show on highscore.html page
+// add an onclick event to the save button from the form (add event listener "click")
 
+// create a function that ends the game
+function endGame() {
+// stop the timer
+clearInterval(interval);
+
+// clear the questions area // hide the quiz-container div
+document.getElementById("quiz-container").setAttribute("class", "hide")
+document.getElementById("result").setAttribute("class", "hide")
+
+// unhide the result div
+
+// in the onclick for save add all the logic to save the object in the localstorage
+
+}
 
 
 // event listener to start quiz when user clicks on start button

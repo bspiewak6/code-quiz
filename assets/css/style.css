@@ -60,3 +60,7 @@ a:link, a:visited {
 #highscore-text, #initials {
     padding: 10px;
 }
+
+.hide {
+    display: none;
+}

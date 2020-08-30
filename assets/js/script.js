@@ -71,8 +71,8 @@ function getQuestion() {
 function timer() {
      interval = setInterval(function() {
         if (timeLeft > 0) {
-            timerClock.textContent = "Time Left: " + timeLeft;
             timeLeft--; 
+            timerClock.textContent = "Time Left: " + timeLeft;
         } else {
             clearInterval(interval);
         }
@@ -83,12 +83,7 @@ function processClick() {
     // say if question is right or wrong
     result.innerHTML = "";
     var question = questions[currentQuestion];
-    if (questions[currentQuestion] && currentQuestion < 4) {
-        correctAlert = document.createElement("p");
-    } else if (currentQuestion === 4) {
-        correctAlert = document.createElement("p");
-        clearInterval(interval);
-    }
+    correctAlert = document.createElement("p");
 
     if (question.answer === this.textContent) {
         correctAlert.textContent = "CORRECT";
@@ -102,7 +97,10 @@ function processClick() {
     currentQuestion++;
 
     if (currentQuestion === questions.length) {
-        endGame();
+        // endGame();
+        // we're waiting for the DOM to update the accurate score
+        setTimeout(endGame, 1000);
+
     } else {
         getQuestion();
     }
@@ -112,8 +110,7 @@ function processClick() {
 
 // create a function that ends the game
 function endGame() {
-// stop the timer
-clearInterval(interval);
+
 
 // clear the questions area // hide the quiz-container div and result div
 document.getElementById("quiz-container").setAttribute("class", "hide")
@@ -121,6 +118,7 @@ document.getElementById("result").setAttribute("class", "hide")
 
 // show user their score and unhide the form to enter initials 
 finalScore.textContent = "Your final score is: " + timeLeft;
+clearInterval(interval);
 document.getElementById("form").setAttribute("class", "block")
 
 };
@@ -129,9 +127,8 @@ function saveHighScore(e) {
     e.preventDefault();
     var initials = initialsEl.value.trim();
     console.log(initials);
-    localStorage.setItem("contact-name", initials);
+    localStorage.setItem(initials, timeLeft);
 };
-
 
 // take the user to the high scores page to show all localStorage names and scores
 

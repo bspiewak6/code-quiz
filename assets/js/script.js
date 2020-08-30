@@ -7,7 +7,7 @@ var welcome = document.getElementById("welcome-container");
 var quiz = document.getElementById("quiz-container");
 var saveBtn = document.getElementById("save");
 var finalScore = document.getElementById("score");
-var initialsEl = document.querySelector("contact-name");
+var initialsEl = document.querySelector("#contact-name");
 
 var currentQuestion = 0;
 var scoreCounter = 75;
@@ -125,11 +125,11 @@ document.getElementById("form").setAttribute("class", "block")
 
 };
 
-function saveHighScore() {
+function saveHighScore(e) {
+    e.preventDefault();
     var initials = initialsEl.value.trim();
     console.log(initials);
     localStorage.setItem("contact-name", initials);
-    debugger
 };
 
 

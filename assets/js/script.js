@@ -5,6 +5,8 @@ var answerList = document.getElementById("answer");
 
 var currentQuestion = 0;
 var scoreCounter = 75;
+var timeLeft = 75;
+
 
 // create array for questions, choices and answers
 var questions = [
@@ -55,8 +57,6 @@ function getQuestion() {
 };
 
 function timer() {
-    var timeLeft = scoreCounter;
-
     var interval = setInterval(function() {
         if (timeLeft > 0) {
             timerClock.textContent = "Time Left: " + timeLeft;
@@ -77,23 +77,17 @@ function processClick() {
         quizContainer.appendChild(correctAlert);
     } else {
         question.answer = !this.textContent;
-        scoreCounter - 10;
+        timeLeft = timeLeft - 10;
     }
-    
-    //deduct score
 
-    // deduct 10 seconds from timer and deduct 1 from score
-
-    currentQuestion++
-    if (currentQuestion === questions.length) {
-        
+    // currentQuestion++
+    // if (currentQuestion === questions.length) {
         
         // show highscore.html
         // set quiz-wrapper to empty string, 
         // create new variable 
-    } else {
         // remove(CorrectAlert)
-    }
+    
 
     getQuestion();  
 };
@@ -102,3 +96,30 @@ function processClick() {
 startBtn.addEventListener("click", getQuestion);
 // when user clicks on start button, the timer starts
 startBtn.addEventListener("click", timer);
+
+
+// // function for saving highscore
+// function saveHighscore() {
+//     // get value of input box
+//     var initials = initialsEl.value.trim();
+  
+//     // make sure value wasn't empty
+//     if (initials !== "") {
+//       // get saved scores from localstorage, or if not any, set to empty array
+//       var highscores =
+//         JSON.parse(window.localStorage.getItem("highscores")) || [];
+  
+//       // format new score object for current user
+//       var newScore = {
+//         score: time,
+//         initials: initials
+//       };
+  
+//       // save to localstorage
+//       highscores.push(newScore);
+//       window.localStorage.setItem("highscores", JSON.stringify(highscores));
+  
+//       // redirect to next page
+//       window.location.href = "highScore.html";
+//     }
+//   }

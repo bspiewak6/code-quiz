@@ -2,6 +2,7 @@ var timerClock = document.getElementById("timer");
 var startBtn = document.getElementById("start");
 var quizContainer = document.getElementById("quiz-container")
 var answerList = document.getElementById("answer");
+var result = document.getElementById("result");
 
 var currentQuestion = 0;
 var scoreCounter = 75;
@@ -70,25 +71,23 @@ function timer() {
 
 function processClick() {
     // say if question is right or wrong
-    var question = questions[currentQuestion]
+    result.innerHTML = "";
+    var question = questions[currentQuestion];
+    correctAlert = document.createElement("p");
     if (question.answer === this.textContent) {
-        correctAlert = document.createElement("p");
         correctAlert.textContent = "CORRECT";
-        quizContainer.appendChild(correctAlert);
+        
     } else {
-        question.answer = !this.textContent;
+        correctAlert.textContent = "INCORRECT";
         timeLeft = timeLeft - 10;
     }
-
-    // currentQuestion++
-    // if (currentQuestion === questions.length) {
-        
-        // show highscore.html
-        // set quiz-wrapper to empty string, 
-        // create new variable 
-        // remove(CorrectAlert)
+    result.appendChild(correctAlert);
+    currentQuestion++;
     
-
+    // add a timeout before asking the next question
+    // 2-3 seconds later, the next question pops up
+    // clear the result div (result.innerHTML = "") when asking the new question
+    
     getQuestion();  
 };
 

@@ -18,14 +18,15 @@ header a {
     font-weight: bold;
 }
 
-div.quiz-container {
-    align-items: center;
-}
-
 a:link, a:visited {
     color: darkgreen;
     text-decoration: none;
     font-weight: bold;
+}
+
+.container {
+    display: inline;
+    align-items: center;
 }
 
 #start, #goback, #clearscore{

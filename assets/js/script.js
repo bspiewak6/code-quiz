@@ -7,6 +7,7 @@ var welcome = document.getElementById("welcome-container");
 var quiz = document.getElementById("quiz-container");
 var saveBtn = document.getElementById("save");
 var finalScore = document.getElementById("score");
+var initialsEl = document.querySelector("contact-name");
 
 var currentQuestion = 0;
 var scoreCounter = 75;
@@ -109,14 +110,12 @@ function processClick() {
     getQuestion();  
 };
 
-
-
 // create a function that ends the game
 function endGame() {
 // stop the timer
 clearInterval(interval);
 
-// clear the questions area // hide the quiz-container div
+// clear the questions area // hide the quiz-container div and result div
 document.getElementById("quiz-container").setAttribute("class", "hide")
 document.getElementById("result").setAttribute("class", "hide")
 
@@ -124,21 +123,29 @@ document.getElementById("result").setAttribute("class", "hide")
 finalScore.textContent = "Your final score is: " + timeLeft;
 document.getElementById("form").setAttribute("class", "block")
 
-// add an onclick event to the save button from the form (add event listener "click")
-// when user clicks on save button, the initials and score are saved in localStorage 
-
-saveBtn.addEventListener("click", );
-
-// takes the user to the high scores page to show all localStorage names and scores
-
-
 };
+
+function saveHighScore() {
+    var initials = initialsEl.value.trim();
+    console.log(initials);
+    localStorage.setItem("contact-name", initials);
+    debugger
+};
+
+
+// take the user to the high scores page to show all localStorage names and scores
+
 
 
 // event listener to start quiz when user clicks on start button
 startBtn.addEventListener("click", getQuestion);
+
 // when user clicks on start button, the timer starts
 startBtn.addEventListener("click", timer);
+
+// when the user clicks on save button, the initials are put in localStorage
+saveBtn.addEventListener("click", saveHighScore);
+
 
 
 

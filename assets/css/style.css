@@ -29,7 +29,7 @@ a:link, a:visited {
     justify-items: center;
 }
 
-#start {
+#start, #clearscore, #savebtn {
     background-color: darkgreen;
     color: white;
     border: none;
@@ -45,7 +45,6 @@ a:link, a:visited {
     padding: 10px;
     font-size: 20px;
     border-radius: 10px;
-    justify-content: space-evenly;
 }
 
 #start:hover, #clearscore:hover {
@@ -54,11 +53,10 @@ a:link, a:visited {
 }
 
 .answer li:hover {
-    background-color: #4CBB17;
+    background-color: lightslategray;
     width: 40%;  
 }
 
-#highscore-text {
+#highscore-text, #initials {
     padding: 10px;
-    background: lightgray;
 }

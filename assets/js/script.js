@@ -111,8 +111,8 @@ function processClick() {
 // create a function that ends the game
 function endGame() {
 
-
 // clear the questions area // hide the quiz-container div and result div
+document.getElementById("welcome-container").setAttribute("class", "hide")
 document.getElementById("quiz-container").setAttribute("class", "hide")
 document.getElementById("result").setAttribute("class", "hide")
 
@@ -120,7 +120,6 @@ document.getElementById("result").setAttribute("class", "hide")
 finalScore.textContent = "Your final score is: " + timeLeft;
 clearInterval(interval);
 document.getElementById("form").setAttribute("class", "block")
-
 };
 
 function saveHighScore(e) {
@@ -129,10 +128,6 @@ function saveHighScore(e) {
     localStorage.setItem(initials, timeLeft);
     window.location="./highscores.html";
 };
-
-// take the user to the high scores page to show all localStorage names and scores
-
-
 
 // event listener to start quiz when user clicks on start button
 startBtn.addEventListener("click", getQuestion);

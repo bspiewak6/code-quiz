@@ -49,11 +49,12 @@ var questions = [
     answer: "all of the above"
     },
 ];
-//  Hide form until after quiz is completed
+
+//  hide form until after quiz is completed
 document.getElementById("form").setAttribute("class", "hide")
 
 
-//  Function to start the quiz and get the array of questions to run
+//  function to start the quiz and get the array of questions to run
 function getQuestion() {
     if(questions[currentQuestion]){
     var question = questions[currentQuestion];
@@ -68,6 +69,7 @@ function getQuestion() {
 }
 };
 
+//  function to start timer and run down until game is over or time runs out
 function timer() {
      interval = setInterval(function() {
         if (timeLeft > 0) {

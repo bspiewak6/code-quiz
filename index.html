@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>JavaScript Coding Quiz</title>
 </head>
-<body>
 
+<body>
+<!-- header including link to view high scores and timer-->
     <header>
         <div class="viewscore"><a href="./highscores.html">View High Scores</a></div>
         <div>
@@ -15,6 +16,7 @@
         </div>
     </header>
 
+<!-- section with welcome text and quiz questions and answers -->
 <section class="content">
     <div id="welcome-container" class="container">
         <h1 class="welcome">Coding Quiz Challenge</h1>
@@ -31,8 +33,10 @@
         <ol id="answer" class="answer"></ol>
     </div>
 
+    <!-- result div shows the user if they got the question right or wrong -->
     <div id="result"></div>
 
+    <!-- form div shows the user the game is over and asks for their initials to add to the high score page -->
     <div id="form">
         <h2>All done!</h2>
         <span id="score" class="score"></span>
@@ -43,8 +47,9 @@
           </form>
     </div>
 
-</secion>
+</section>
 
+    <!-- link to my JavaScript file -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>

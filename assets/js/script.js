@@ -126,8 +126,8 @@ document.getElementById("form").setAttribute("class", "block")
 function saveHighScore(e) {
     e.preventDefault();
     var initials = initialsEl.value.trim();
-    console.log(initials);
     localStorage.setItem(initials, timeLeft);
+    window.location="./highscores.html";
 };
 
 // take the user to the high scores page to show all localStorage names and scores
@@ -142,6 +142,8 @@ startBtn.addEventListener("click", timer);
 
 // when the user clicks on save button, the initials are put in localStorage
 saveBtn.addEventListener("click", saveHighScore);
+
+
 
 
 

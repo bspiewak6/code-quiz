@@ -26,5 +26,5 @@ As a coding boot camp student, the user of this site will want to take a timed q
 4. Lastly, the user is able to save their initials and their score will be added to the high scores page
 
 ## Links
-* [Password Generator Deployed Site Link]() 
-* [Password Generator Github Repository]()
+* [Code Quiz Deployed Site Link](https://bspiewak6.github.io/code-quiz/) 
+* [Code Quiz Github Repository](https://github.com/bspiewak6/code-quiz)

@@ -25,3 +25,6 @@ for (var i = 0; i < highScoreKeys.length; i++) {
 
 highScores();
 
+// last part is to order the high scores 
+// save them so other users could see the leaderboard 
+
